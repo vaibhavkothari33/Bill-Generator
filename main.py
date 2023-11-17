@@ -77,8 +77,8 @@ def send_email():
     def send_gmail():
         try:
             # Use the provided sender email and password
-            sender_email = "contact.vaibhavkothari@gmail.com"
-            password = "milv kxvw cvaj ovev"
+            sender_email = "your mail id @gmail.com"
+            password = "Your gmail password for mailing that you can generate from google two step verification setting"
 
             # Connect to the SMTP server
             ob = smtplib.SMTP("smtp.gmail.com", 587)
