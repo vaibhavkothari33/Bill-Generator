@@ -1,8 +1,8 @@
 import smtplib
 
-sender_email = "contact.vaibhavkothari@gmail.com"
-receiver_email = "vaibhavkothari50@gmail.com"
-password = "milv kxvw cvaj ovev"
+sender_email = "senderid@gmail.com"
+receiver_email = "reciverid@gmail.com"
+password = "Enter your passward"
 
 message = """\
 Subject: Test Email
