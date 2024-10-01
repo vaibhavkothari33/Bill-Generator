@@ -106,27 +106,6 @@ def send_email():
         except Exception as e:
             # Show error message if there's an issue
             messagebox.showerror("Error", f"Something went wrong: {str(e)}", parent=root1)
-
-# def send_email():
-#     def send_gmail():
-#         try:
-#             ob=smtplib.SMTP("smtp.gmail.com",587)# still have to connect it properly
-#             ob.starttls()# to secure connection 
-#             ob.login(senderEntry.get(),passwordEntry.get())
-#             #  ob.login("contact.vaibhavkothati@gmail.com","milv kxvw cvaj ovev")
-#             # message=
-#             # reciever_address
-        
-#             ob.sendmail(senderEntry.get(),recieverEntry.get(),email_textarea.get(1.0,END))# from address, to address, what to 
-#             ob.quit()
-#             messagebox.showinfo("Success","Bill is sent successfully",parent=root1)
-#             root1.destroy()
-    
-#         except:
-            
-#              messagebox.showerror("Error","Something went wrong, Please try again",parent=root1)
-    
-    
     
     if textArea.get(1.0,END)=="\n":
         messagebox.showerror("Error","Bill is empty")
@@ -136,21 +115,6 @@ def send_email():
         root1.title("Send Email")
         root1.config(bg="gray20")
         root1.resizable(0,0)
-        
-        # senderFrame=LabelFrame(root1,text="Sender",font=("arial",16,"bold"),bd=6,bg="gray20",fg="white")
-        # senderFrame.grid(row=0,column=0,pady=20,padx=40)
-
-        # senderLabel=Label(senderFrame,text="Sender's Email",font=("arial",14,"bold"),bd=6,bg="gray20",fg="white")
-        # senderLabel.grid(row=0,column=0,pady=8,padx=10)
-
-        # senderEntry=Entry(senderFrame,font=("arial",14,"bold"),bd=2,width=23,relief=GROOVE)
-        # senderEntry.grid(row=0,column=1,pady=8,padx=10)
-      
-      
-        # passwordLabel=Label(senderFrame,text="Password",font=("arial",14,"bold"),bd=6,bg="gray20",fg="white")
-        # passwordLabel.grid(row=1,column=0,pady=8,padx=10)
-        # passwordEntry=Entry(senderFrame,font=("arial",14,"bold"),bd=2,width=23,relief=GROOVE,show="*")
-        # passwordEntry.grid(row=1,column=1,pady=8,padx=10)
         
         recipientFrame=LabelFrame(root1,text="Recipent",font=("arial",16,"bold"),bd=6,bg="gray20",fg="white")
         recipientFrame.grid(row=1,column=0,pady=20,padx=40)
@@ -169,9 +133,6 @@ def send_email():
         email_textarea.grid(row=2,column=0,columnspan=2)
         email_textarea.delete(1.0,END)
         email_textarea.insert(END,textArea.get(1.0,END).replace("=","").replace("-","").replace("\t\t\t","      "))
-        
-     
-        
         
         sendButton=Button(root1,text="Send",font=("arial",14,"bold"),width=15,command=send_gmail)
         sendButton.grid(row=2,column=0,pady=20)
@@ -195,9 +156,6 @@ def search_bill():
             break
     else:
         messagebox.showerror("Error","Invalid Bill Number")  
-        
-    
-
 
 if not os.path.exists("bills"):
     os.mkdir("bills")
@@ -235,9 +193,7 @@ def bill_area():
         textArea.insert(END,"\n======================================= ")
         
         # bill printing of burgers
-        
-        
-         
+     
         if vegburEntry.get()!="0":
             textArea.insert(END,f" Aloo-Tikki Burger\t\t   {vegburEntry.get()}\t\t {vegburgerprice} Rs\n")
         if cheesburEntry.get()!="0":
@@ -251,16 +207,7 @@ def bill_area():
         if freshEntry.get()!="0":     
             textArea.insert(END,f" Double-Patty Burger\t\t {freshEntry.get()}\t\t {freshburgerprice} Rs\n")
       
-      
-      
-      
-      
-      
-      
-      
       # bill printing of pizza
-      
-      
       
         if otcEntry.get()!="0":
             textArea.insert(END,f" Marghrita Pizza\t\t     {otcEntry.get()}\t\t {otcpizzprice} Rs\n")
@@ -274,13 +221,7 @@ def bill_area():
             textArea.insert(END,f" Farmhouse Pizza\t\t     {farmHoEntry.get()}\t\t {farmpizzprice} Rs\n")
         if lateSEntry.get()!="0":     
             textArea.insert(END,f" Italian Pizza\t\t       {lateSEntry.get()}\t\t {latepizzprice} Rs\n")
-      
-      
-      
-      
-      
-      
-    #   # bill printing of  shakes
+        # bill printing of  shakes
       
         if cokeEntry.get()!="0":
             textArea.insert(END,f" Chocolate-Shake\t\t     {cokeEntry.get()}\t\t {cokeprice} Rs\n")
